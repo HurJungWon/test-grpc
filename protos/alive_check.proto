@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package alivecheck;
+
+message AliveRequest {
+    string name = 1;
+}
+
+message AliveResponse {
+    bool is_alive = 1;
+}
+
+service AliveService {
+    rpc GetHealthy(AliveRequest) returns (AliveResponse);
+}
